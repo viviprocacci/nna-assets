@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>NNA Asset Tags</title>
+<script>
+/* GitHub Pages serves this page for any address it doesn't have. A tag link like .../NNA-0041 becomes
+   .../?tag=NNA-0041, which the app opens. Anything else goes to the app's front page.
+   Self-contained on purpose: this page can be served at any depth, so it can't load relative files. */
+(function () {
+  var m = location.pathname.match(/^(.*\/)(NNA-\d{3,4})\/?$/i);
+  if (m) { location.replace(m[1] + '?tag=' + m[2].toUpperCase()); return; }
+  var seg = location.pathname.split('/')[1];
+  var base = /\.github\.io$/.test(location.hostname) && seg ? '/' + seg + '/' : '/';
+  location.replace(base);
+})();
+</script>
+<style>body{font:15px system-ui,-apple-system,sans-serif;color:#263230;background:#F6F5F1;padding:24px}</style>
+</head>
+<body>
+<p>Opening NNA Asset Tags…</p>
+</body>
+</html>
